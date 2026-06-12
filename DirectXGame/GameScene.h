@@ -1,10 +1,12 @@
 #pragma once
 #include "KamataEngine.h"
 #include "Model2.h"
-#include <2d/Sprite.h>
+
+using namespace KamataEngine;
 
 // ゲームシーン
 class GameScene {
+
 public:
 	GameScene();
 	~GameScene();
@@ -18,6 +20,15 @@ public:
 	// 描画
 	void Draw();
 
-	KamataEngine::Sprite* sprite_ = nullptr;
+private:
+	// カメラ
+	Camera camera_;
+
+	// テクスチャハンドル
 	uint32_t textureHandle_ = 0;
+
+	Model2* model2 = nullptr;
+
+	// ワールド変換データ
+	WorldTransform worldTransform_;
 };
