@@ -148,8 +148,19 @@ public: // 静的メンバ関数
 	/// </summary>
 	static void PostDraw();
 
-	//四角形の生成
+	/// <summary>
+	/// 四角形モデルの生成
+	/// </summary>
+	/// <param name="max">個数</param>
+	/// <returns></returns>
 	static Model2* CreateSquare(int max);
+
+	/// <summary>
+	/// リングモデルの生成
+	/// </summary>
+	/// <param name="divide">分割</param>
+	/// <returns></returns>
+	static Model2* CreateRing(int divide);
 
 public: // メンバ関数
 	~Model2() = default;
@@ -191,7 +202,7 @@ public: // メンバ関数
 
 private: // メンバ変数
 	// 名前
-	std::string name;
+	std::string name_;
 	// メッシュコンテナ
 	std::vector<std::unique_ptr<Mesh>> meshes_;
 	// マテリアルコンテナ
