@@ -4,7 +4,7 @@ using namespace KamataEngine;
 #include <algorithm>
 //
 // void Effect::Initialize(Model* model, Vector3 position, float rotate, float size)
-void Effect::Initialize(Model* model, float rotate, float size, Vector3 position, Vector3 color) {
+void Effect::Initialize(Model* model, float rotate, float size, Vector3 position /*, Vector3 color*/) {
 	// 引数として受け取ったデータをメンバ変数に記録する
 	// textureHandle_ = textureHandle;
 	model_ = model;
@@ -19,7 +19,20 @@ void Effect::Initialize(Model* model, float rotate, float size, Vector3 position
 	worldTransform_.translation_ = position;
 
 	objectColor_.Initialize();
-	color_ = {color.x, color.y, color.z, 1};
+	//color_ = {color.x, color.y, color.z, 1};
+
+	float colorType = static_cast<float>(rand() % 4);
+	if (colorType == 0)
+	{
+		color_ = {1.0f, 0.0f, 0.0f, 1.0f}; // 赤
+	} else if (colorType == 1) {
+		color_ = {0.0f, 0.0f, 1.0f, 1.0f}; // 青
+	} else if (colorType == 2) {
+		color_ = {1.0f, 1.0f, 0.0f, 1.0f}; // 黄
+	} else {
+		color_ = {1.0f, 1.0f, 1.0f, 1.0f}; // 白
+	}
+
 }
 
 void Effect::Update() {

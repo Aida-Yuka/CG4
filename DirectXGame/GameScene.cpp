@@ -81,7 +81,7 @@ void GameScene::EffectBorn(Vector3 position) {
 		Effect* effect = new Effect();
 		float rotate = distribution(randomEngine) * 3.14f;
 		float size = 1.0f + abs(distribution(randomEngine)) * 4;
-		effect->Initialize(modelEffect_, rotate, size, position, color);
+		effect->Initialize(modelEffect_, rotate, size, position/*, color*/);
 		effects_.push_back(effect);
 	}
 }

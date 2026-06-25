@@ -9,7 +9,7 @@ public: // メンバ関数
 	/// 初期化
 	// void Initialize(Model* model, Vector3 position, float rotate, float size);
 	// void Initialize(KamataEngine::Model* model, float rotate, float size);
-	void Initialize(Model* model, float rotate, float size, Vector3 position, Vector3 color);
+	void Initialize(Model* model, float rotate, float size, Vector3 position/*, Vector3 color*/);
 	// void Initialize(KamataEngine::Model* model);
 
 	/// 毎フレーム処理
@@ -26,6 +26,8 @@ private:
 	WorldTransform worldTransform_;
 	// モデル
 	Model* model_ = nullptr;
+
+	float randomOffset_;
 
 	// 終了フラグ
 	bool isFinished_ = false;
