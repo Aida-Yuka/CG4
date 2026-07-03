@@ -2,6 +2,7 @@
 
 #include "Effect.h"
 #include "KamataEngine.h"
+#include "Particle.h"
 
 using namespace KamataEngine;
 
@@ -40,4 +41,10 @@ private:
 
 	// エフェクト発生
 	void EffectBorn(KamataEngine::Vector3 position);
+
+	// パーティクル3Dモデルデータ
+	Model* modelParticle_ = nullptr;
+
+	// パーティクル
+	Particle* particle_ = nullptr;
 };
